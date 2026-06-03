@@ -1,0 +1,21 @@
+# How to Build "Downloads Organizer Setup.exe"
+
+## Step 1 — Install NSIS (free, takes 1 minute)
+Download from: https://nsis.sourceforge.io/Download
+Install with default settings.
+
+## Step 2 — Place these files in the same folder
+Make sure these two files are together in one folder (e.g. your Desktop):
+- Organize-Downloads.ps1
+- installer.nsi
+
+## Step 3 — Build the installer
+Right-click on installer.nsi → "Compile NSIS Script"
+
+That's it! A file called "Downloads Organizer Setup.exe" will appear in the same folder.
+
+## Step 4 — Run the installer
+Double-click "Downloads Organizer Setup.exe", click Next, and:
+- The app installs to Program Files
+- A shortcut appears on the Desktop for everyone to use
+- It shows up in Add/Remove Programs for easy uninstall

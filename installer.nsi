@@ -15,8 +15,8 @@ SetCompressor lzma
 ; Modern UI
 !include "MUI2.nsh"
 !define MUI_ABORTWARNING
-!define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
-!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
+!define MUI_ICON "downloads-organizer.ico"
+!define MUI_UNICON "downloads-organizer.ico"
 !define MUI_WELCOMEPAGE_TITLE "Welcome to Downloads Organizer Setup"
 !define MUI_WELCOMEPAGE_TEXT "This will install Downloads Organizer on your computer.$\r$\n$\r$\nA shortcut will be placed on your Desktop so anyone can organize their Downloads folder with a single click.$\r$\n$\r$\nClick Next to continue."
 
@@ -34,6 +34,7 @@ Section "Install"
 
     ; Copy the PowerShell script
     File "Organize-Downloads.ps1"
+    File "downloads-organizer.ico"
 
     ; Create the launcher batch file
     FileOpen $0 "${INSTALL_DIR}\Run.bat" w
@@ -45,7 +46,7 @@ Section "Install"
     CreateShortcut "$DESKTOP\Downloads Organizer.lnk" \
         "${INSTALL_DIR}\Run.bat" \
         "" \
-        "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico" \
+        "$INSTDIR\downloads-organizer.ico" \
         0 \
         SW_SHOWNORMAL \
         "" \
@@ -61,7 +62,7 @@ Section "Install"
     WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\DownloadsOrganizer" \
         "Publisher" "${PUBLISHER}"
     WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\DownloadsOrganizer" \
-        "DisplayIcon" "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
+    "DisplayIcon" "$INSTDIR\downloads-organizer.ico"
 
     WriteUninstaller "${INSTALL_DIR}\Uninstall.exe"
 

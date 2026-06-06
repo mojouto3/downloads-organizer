@@ -72,6 +72,6 @@ MIT License — free to use, modify, and share. See [LICENSE](LICENSE) for detai
 
 ---
 
-## Author
+## Author mojomultimedia
 
 Made by mojo
